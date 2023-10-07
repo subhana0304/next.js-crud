@@ -10,7 +10,7 @@ const RemoveBtn = ({id}) => {
         const confirmed = confirm('Are you sure to remove this blog?');
 
         if(confirmed){
-            const res = await fetch(`http://localhost:3000/api/blogs?id=${id}`, {
+            const res = await fetch(`/api/blogs?id=${id}`, {
                 method: "DELETE",
             })
             if(res.ok){
