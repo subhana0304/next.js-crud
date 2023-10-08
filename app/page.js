@@ -1,4 +1,4 @@
-import Blog from "@/Components/Blog";
+import Blog from "@/components/Blog";
 
 
 export default function Home() {

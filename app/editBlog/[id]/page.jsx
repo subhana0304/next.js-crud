@@ -1,5 +1,5 @@
 "use client";
-import EditPage from '@/Components/EditPage';
+import EditPage from '@/components/EditPage';
 import React, { useEffect, useState } from 'react';
 
 
