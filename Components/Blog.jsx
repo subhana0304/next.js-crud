@@ -8,11 +8,16 @@ const Blog = () => {
     
     const [blogs, setBlogs] = useState();
 
-    useEffect(()=>{
-        fetch ('/api/blogs')
-        .then(res=>res.json())
-        .then(data => setBlogs(data?.blogs))
-    },[])
+    const refetch = () => {
+        fetch('/api/blogs')
+            .then(res => res.json())
+            .then(data => setBlogs(data?.blogs))
+
+    }
+    useEffect(() => {
+        refetch()
+        return () => { }
+    }, [])
 
     return (
         <>
@@ -23,7 +28,7 @@ const Blog = () => {
                 <p>{blog?.description}</p>
             </div>
             <div className='flex items-center justify-between gap-2'>
-                <RemoveBtn id={blog?._id}></RemoveBtn>
+                <RemoveBtn id={blog?._id} refetch={refetch} ></RemoveBtn>
                 <Link href={`editBlog/${blog._id}`}><HiPencilAlt className='text-green-700' size={24} /> </Link>
             </div>
         </div>

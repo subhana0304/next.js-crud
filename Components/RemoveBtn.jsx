@@ -3,22 +3,22 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { HiOutlineTrash } from "react-icons/hi";
 
-const RemoveBtn = ({id}) => {
+const RemoveBtn = ({ id , refetch}) => {
     const router = useRouter();
 
-    const removeBlog = async() =>{
+    const removeBlog = async () => {
         const confirmed = confirm('Are you sure to remove this blog?');
 
-        if(confirmed){
+        if (confirmed) {
             const res = await fetch(`/api/blogs?id=${id}`, {
                 method: "DELETE",
             })
-            if(res.ok){
-                router.refresh();
-                router.push("/");
-              } else {
+            if (res.ok) {;
+                refetch()
+        router.push("/");
+            } else {
                 throw new Error("Failed to delete")
-              }
+            }
         }
     }
 
