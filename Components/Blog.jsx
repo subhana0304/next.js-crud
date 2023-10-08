@@ -4,26 +4,8 @@ import RemoveBtn from '@/Components/RemoveBtn'
 import Link from 'next/link'
 import { HiPencilAlt } from "react-icons/hi";
 
-// const getBlogs = async() =>{
-//     try {
-//         const res = await fetch ('http://localhost:3000/api/blogs', {
-//             cache: "no-store",
-//         });
-
-//         if(!res.ok){
-//             throw new Error("Failed to fetch")
-//         }
-
-//         return res.json();
-
-//     } catch (error) {
-//         console.log("Error loading blogs", error);
-//     }
-// }
-
-// eslint-disable-next-line @next/next/no-async-client-component
 const Blog = () => {
-    // const {blogs} = await getBlogs();
+    
     const [blogs, setBlogs] = useState();
 
     useEffect(()=>{

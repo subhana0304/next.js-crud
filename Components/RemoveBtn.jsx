@@ -14,8 +14,11 @@ const RemoveBtn = ({id}) => {
                 method: "DELETE",
             })
             if(res.ok){
-            router.refresh();
-            }
+                router.refresh();
+                router.push("/");
+              } else {
+                throw new Error("Failed to delete")
+              }
         }
     }
 

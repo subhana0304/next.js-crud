@@ -38,14 +38,14 @@ const EditPage = ({id, title, description}) => {
         value={newTitle}
         className='border border-slate-500 px-8 py-2' 
         type='text' 
-        placeholder={title} 
+        defaultValue={title}
         /> 
         <input 
         onChange={(e) => setNewDescription(e.target.value)}
         value={newDescription}
         className='border border-slate-500 px-8 py-2' 
         type='text' 
-        placeholder={description} 
+        defaultValue={description} 
         /> 
 
         <button className='bg-green-700 text-white font-semibold px-6 py-3 w-fit'>Update Blog</button>
