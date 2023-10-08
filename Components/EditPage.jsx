@@ -49,7 +49,7 @@ const EditPage = ({id, title, description}) => {
         defaultValue={description} 
         /> 
 
-        <button className='bg-green-700 text-white font-semibold px-6 py-3 w-fit'>Update Blog</button>
+        <button type='submit' className='bg-green-700 text-white font-semibold px-6 py-3 w-fit'>Update Blog</button>
       </form>
     );
 };
