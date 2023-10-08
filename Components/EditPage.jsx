@@ -30,6 +30,7 @@ const EditPage = ({id, title, description}) => {
       console.log(error);
     }
   }
+  // -------
 
     return (
         <form onSubmit={handleSubmit} className='m-10 flex flex-col gap-3'>
