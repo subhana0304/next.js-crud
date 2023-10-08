@@ -11,7 +11,7 @@ const EditPage = ({id, title, description}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+      const res = await fetch(`/api/blogs/${id}`, {
         method: "PUT",
         headers:{
           "content-type": "application/json",
